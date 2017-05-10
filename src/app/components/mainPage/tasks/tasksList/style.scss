@@ -1,0 +1,20 @@
+.tasks-wrapper {
+	padding: 20px;
+
+	.task {
+		height: 100px;
+	    border: 1px solid black;
+	    padding: 35px 10px;
+	    margin-bottom: 5px;
+	    font-size: 16px;
+	}
+
+	.task-name {
+		margin-left: 20px;
+	}
+
+	.glyphicon {
+		cursor: pointer;
+		margin-right: 20px;
+	}
+}

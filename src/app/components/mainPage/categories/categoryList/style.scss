@@ -1,0 +1,23 @@
+.list-group.categories-wrapper {
+    padding: 0;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.list-group.categories-wrapper .list-group {
+    margin-bottom: 0;
+}
+
+.list-group.categories-wrapper .list-group-item {
+    border-radius: 0;
+    border-width: 1px 0 0 0;
+    cursor: pointer;
+}
+
+.list-group-item .glyphicon {
+    margin-right: 5px;
+}
+
+.list-group .sub-category {
+	padding-left: 30px;
+}

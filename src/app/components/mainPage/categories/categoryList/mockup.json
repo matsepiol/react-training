@@ -1,0 +1,84 @@
+{
+    "categories": 
+        [
+            {
+                "name": "category 1",
+                "tasks": [
+                            {"name": "task category 1", "done": true}, 
+                            {"name": "task category 1", "done": false}, 
+                            {"name": "task category 1", "done": false}
+                        ],
+                "id": 0
+            },
+            {
+                 "name": "category 2",
+                 "tasks": [
+                            {"name": "task category 2", "done": false}, 
+                            {"name": "task category 2", "done": false}, 
+                            {"name": "task category 2", "done": false}                  
+                        ],
+                "categories" : [
+                    {
+                    "name": "category 1-1-1-1",
+                    "tasks": [
+                                {"name": "task category 1-1-1-1", "done": false}, 
+                                {"name": "task category 1-1-1-1", "done": false}, 
+                                {"name": "task category 1-1-1-1", "done": false}       
+                            ],
+                    "id": 7
+                }],
+                "id": 1
+
+            },
+            {
+                 "name": "category 3",
+                 "tasks": [
+                                {"name": "task category 3", "done": false}, 
+                                {"name": "task category 3", "done": false}, 
+                                {"name": "task category 3", "done": false}                
+                            ],
+                "id": 2,
+                 "categories": [
+                    {
+                        "name": "category 3-1",
+                        "tasks": [
+                                {"name": "task category 3-1", "done": false}, 
+                                {"name": "task category 3-1", "done": false}, 
+                                {"name": "task category 3-1", "done": false}                        
+                            ],
+                        "categories" : [
+                            {
+                            "name": "category 4-4-4-4",
+                            "tasks": [
+                                {"name": "task category 4-4-4-4", "done": false}, 
+                                {"name": "task category 4-4-4-4", "done": false}, 
+                                {"name": "task category 4-4-4-4", "done": false}
+                            ],
+                            "id": 6
+                        }],
+                        "id": 3
+
+                    },
+                    {
+                        "name": "category 3-2",
+                        "tasks": [
+                            {"name": "task category 3-2", "done": false}, 
+                            {"name": "task category 3-2", "done": false}, 
+                            {"name": "task category 3-2", "done": false}                        
+                        ],
+                        "id": 4
+                    },
+                    {
+                        "name": "category 3-3",
+                        "tasks": [
+                                {"name": "task category 3-3", "done": false}, 
+                                {"name": "task category 3-3", "done": false}, 
+                                {"name": "task category 3-3", "done": false}                       
+                            ],
+                        "id": 5
+                    }
+                 ]
+            }
+        ]
+    
+}
