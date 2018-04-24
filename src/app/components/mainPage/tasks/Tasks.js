@@ -1,7 +1,7 @@
 import React from "react";
 import TasksList from './tasksList/TasksList';
 
-export default class Tasks extends React.Component {
+export default class Tasks extends React.PureComponent {
   render() {
     return (
       <div className='tasks col-md-6'>
@@ -12,7 +12,12 @@ export default class Tasks extends React.Component {
           </div>
         </div>
         <TasksList tasks={this.props.tasks} />
+        {functionalComponent()}
       </div>
     );
   }
+}
+
+function functionalComponent(props) {
+  return <p>Functional Component</p>;
 }

@@ -3,7 +3,7 @@ import React from "react";
 import AddCategory from './addCategory/AddCategory';
 import CategoryList from './categoryList/CategoryList';
 
-export default class Categories extends React.Component {
+export default class Categories extends React.PureComponent {
   render() {
 
     return (

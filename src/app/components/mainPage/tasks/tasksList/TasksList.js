@@ -8,6 +8,11 @@ export default class TasksList extends React.Component {
     console.log(this);
   }
 
+  handleChange() {
+    console.log(this);
+    this.done = !this.done;
+  }
+
   render() {
     let tasks;
     if(this.props && this.props.tasks) {
@@ -15,7 +20,7 @@ export default class TasksList extends React.Component {
         return (
           <div className='task' key={i}> 
             <label>
-              <input type='checkbox' checked={task.done} />
+              <input type='checkbox' checked={task.done} onChange={this.handleChange.bind(task)} />
             </label>
             <span className='task-name'>{task.name}</span> 
             <i className='glyphicon glyphicon-edit pull-right' onClick={this.editTask.bind(task)}></i>

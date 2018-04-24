@@ -11,10 +11,10 @@ export default class Header extends React.Component {
               <input type="text" className="form-control" placeholder="Search" />
             </div>
             <div className='checkbox pull-right'>
-          <label className='show-done-input' >
-            <input type='checkbox' checked /> Show Done
-          </label>  
-        </div>    
+              <label className='show-done-input' >
+                <input type='checkbox' checked /> Show Done
+              </label>  
+            </div>    
       </header>
     );
   }
