@@ -1,7 +1,9 @@
 import React from "react";
 
-import Categories from './categories/Categories';
-import Tasks from './tasks/Tasks';
+import Movies from './movies/Movies';
+import Search from './search/Search';
+import InfoBar from './infoBar/InfoBar';
+import ErrorBoundry from './errorBoundry/ErrorBoundry';
 
 require('./style.scss');
 
@@ -11,23 +13,24 @@ export default class MainPage extends React.Component {
     this.state = { tasks: null };
   }
 
-  displayTasks(tasks, toggleCategory) {
-    toggleCategory ? this.setState({tasks: null}) : this.setState({tasks: tasks});
-  }
-
   render() {
     return (
       <div className='main-page container'>
-        <div className="progress">
-          <div className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-            60%
-          </div>
+
+        <div className='row'>
+            <Search />
         </div>
-        <div className='row'>   
-          <Categories displayTasks={this.displayTasks.bind(this)}/>
-          <Tasks tasks={this.state.tasks}/>
+
+        <div className='row'>
+          <InfoBar />
+        </div>
+
+        <div className='row'>
+          <Movies movies={this.state.movies} />
         </div>
       </div>
     );
   }
 }
+
+
