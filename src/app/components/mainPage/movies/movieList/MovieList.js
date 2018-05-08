@@ -15,10 +15,16 @@ export default class MovieList extends React.Component {
 
     this.props = {
       movie: [{
-        name: "Mock movie",
+        title: "Mock movie",
         genre: "unknown",
         year: 2002
-      }]
+      },
+      {
+        title: "Mock movie",
+        genre: "unknown",
+        year: 2002
+      },  
+    ]
     }
 
     if (this.props && this.props.movie) {
@@ -33,7 +39,7 @@ export default class MovieList extends React.Component {
       })
     }
     return(
-      <div className='movie-wrapper col-lg-12'>{movie}</div>
+      <div className='movie-wrapper col-lg-7'>{movie}</div>
     )
   }
 }

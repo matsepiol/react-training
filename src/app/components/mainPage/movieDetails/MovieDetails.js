@@ -1,21 +1,17 @@
 import React from "react";
 
-import Movies from './movies/Movies';
-import Search from './search/Search';
-import InfoBar from './infoBar/InfoBar';
-import ErrorBoundry from './errorBoundry/ErrorBoundry';
+// require('./style.scss');
 
-require('./style.scss');
-
-export default class MainPage extends React.Component {
+export default class MovieDetails extends React.Component {
   constructor() {
     super();
     this.state = { tasks: null };
   }
 
   render() {
+    let movie;
     if (this.props && this.props.movie) {
-      const movie = this.props.movie;
+      movie = this.props.movie;
       return (
         <div className='movie-details container'>
           <span className='movie-title'>{movie.title}</span>
@@ -27,6 +23,10 @@ export default class MainPage extends React.Component {
         </div>
       );
     }
+
+    return(
+      <div className='movie-wrapper col-lg-12'>{movie}</div>
+    )
   }
 }
 

@@ -13,14 +13,14 @@ export default class InfoBar extends React.PureComponent {
 }
 
 function movieCounterComponent(props) {
-  return <span className="movie-counter">7 movies found</span>
+  return <p className="movie-counter">7 movies found</p>
 }
 
 function sortMovieComponent() {
   return (
     <div className="sort-movie">
-      sort by:
-    <div className="btn-group btn-group-toggle" data-toggle="buttons">
+      <p>sort by:</p>
+      <div className="btn-group btn-group-toggle" data-toggle="buttons">
         <label className="btn btn-secondary btn-sm active">
           <input type="radio" name="options" id="option2" autoComplete="off" /> Title
       </label>

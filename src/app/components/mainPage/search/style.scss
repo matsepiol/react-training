@@ -1,7 +1,19 @@
 .search-bar {
 	background-color: #bbb;
 	margin-bottom: 0;
+	padding: 20px;
 	width: 100%;
+}
+
+p {
+	color: #fff;
+	display: inline-block;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.btn-group {
+	margin-left: 10px;
 }
 
 input {
@@ -10,4 +22,5 @@ input {
 
 .search-button {
 	float: right;
+	width: 150px;
 }

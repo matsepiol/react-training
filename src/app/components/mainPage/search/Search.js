@@ -5,9 +5,9 @@ export default class Search extends React.PureComponent {
   render() {
     return (
       <div className="form-group search-bar">
-        <h1>Find your movie</h1>
+        <p>Find your movie</p>
         {searchInputComponent()}
-        Search by:
+        <p>Search by:</p>
       {searchFiltersComponent()}
         {searchSubmitButton()}
       </div>)
@@ -21,10 +21,10 @@ function searchInputComponent() {
 function searchFiltersComponent() {
   return (
     <div className="btn-group btn-group-toggle" data-toggle="buttons">
-      <label className="btn btn-secondary btn-sm active">
+      <label className="btn btn-danger btn-sm active">
         <input type="radio" name="options" id="option2" autoComplete="off" /> Title
     </label>
-      <label className="btn btn-secondary btn-sm">
+      <label className="btn btn-danger btn-sm">
         <input type="radio" name="options" id="option2" autoComplete="off" /> Genre
     </label>
     </div>
@@ -32,5 +32,5 @@ function searchFiltersComponent() {
 }
 
 function searchSubmitButton() {
-  return <button type="button" className="btn btn-primary btn-sm search-button">Search</button>
+  return <button type="button" className="btn btn-danger btn-sm search-button">Search</button>
 }
