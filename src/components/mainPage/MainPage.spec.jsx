@@ -8,17 +8,17 @@ import Search from './search/Search';
 import InfoBar from './infoBar/InfoBar';
 import MovieDetails from './movieDetails/MovieDetails';
 
-it("renders the heading", () => {
+it("renders search bar", () => {
     const result = shallow(<MainPage />).contains(<Search />);
     expect(result).toBeTruthy();
 });
 
-it("renders the heading", () => {
+it("renders infobar", () => {
     const result = shallow(<MainPage />).contains(<InfoBar />);
     expect(result).toBeTruthy();
 });
 
-it("renders the heading", () => {
+it("renders movies", () => {
     const result = shallow(<MainPage />).contains(<Movies />);
     expect(result).toBeTruthy();
 });

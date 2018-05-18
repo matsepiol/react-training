@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders genre input 1`] = `
+<div
+  className="movie-wrapper col-lg-7"
+>
+  <div
+    className="movie"
+  >
+    <p
+      className="movie-name"
+    >
+      Name: 
+      Mock movie
+    </p>
+    <p
+      className="movie-genre"
+    >
+      Genre: 
+      unknown
+    </p>
+    <p
+      className="movie-year"
+    >
+      Year: 
+      2002
+    </p>
+  </div>
+  <div
+    className="movie"
+  >
+    <p
+      className="movie-name"
+    >
+      Name: 
+      Mock movie
+    </p>
+    <p
+      className="movie-genre"
+    >
+      Genre: 
+      unknown
+    </p>
+    <p
+      className="movie-year"
+    >
+      Year: 
+      2002
+    </p>
+  </div>
+</div>
+`;

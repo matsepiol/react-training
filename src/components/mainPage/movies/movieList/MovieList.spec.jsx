@@ -1,10 +1,13 @@
 import * as React from "react";
 import { shallow } from "enzyme";
+import {create as render } from 'react-test-renderer';
 
 import MovieList from './MovieList';
 
 
-it("renders genre input", () => {
-    // const result = shallow(<MovieList />).contains(<div className='movie-wrapper col-lg-7'></div>);
-    // expect(result).toBeTruthy();
+it("renders correctly", () => {
+    const result = render(<MovieList />);
+    const snap = result.toJSON();
+
+    expect(snap).toMatchSnapshot();
 });
