@@ -6,7 +6,6 @@ export default class MovieList extends React.Component {
 
 
   handleChange() {
-    console.log(this);
     this.done = !this.done;
   }
 

@@ -34,6 +34,10 @@
     "react-dom": "^16.3.2"
   },
   "jest": {
+    "setupFiles": [
+      "<rootDir>/test-shim.js",
+      "<rootDir>/test-setup.js"
+    ],
     "transform": {
       "^.+\\.(jsx|js)?$": "<rootDir>/node_modules/babel-jest"
     },
