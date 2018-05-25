@@ -5,16 +5,18 @@ import Search from './search/Search';
 import InfoBar from './infoBar/InfoBar';
 import MovieDetails from './movieDetails/MovieDetails';
 import ErrorBoundry from './errorBoundry/ErrorBoundry';
+import { getState } from 'redux';
 
 require('./style.scss');
 
 export default class MainPage extends React.Component {
   constructor() {
     super();
-    this.state = { tasks: null };
   }
 
   render() {
+    const stateProps = this.props.store.getState();
+
     return (
       <div className='main-page container'>
 
@@ -33,7 +35,7 @@ export default class MainPage extends React.Component {
         </div>
 
         <div className='row'>
-          <Movies movies={this.state.movies} />
+          <Movies movies = { stateProps }/>
         </div>
       </div>
     );

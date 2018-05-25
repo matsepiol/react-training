@@ -1,11 +1,12 @@
 import React from "react";
 import MovieList from './movieList/MovieList';
+require('./style.scss');
 
 export default class Movies extends React.PureComponent {
   render() {
     return (
       <div>
-        <MovieList tasks={this.props.tasks} />
+        <MovieList movies={this.props.movies} />
       </div>
     );
   }
