@@ -10,10 +10,17 @@ export default class MovieList extends React.Component {
 
     if (this.props && this.props.movies) {
       movie = this.props.movies.map( (movie, i) => {
+        const genres = (movie.genres) ? movie.genres.join(', ') : '';
+        const year = (movie.release_date) ? movie.release_date.substring(0, 4) : '';
+
         return (
-          <div className='movie' key={i}> 
-            <p className='movie-name'>Name: {movie.title}</p> 
-            <p className='movie-genre'>Genre: {movie.genre}</p> 
+          <div className='movie' key={i}>
+            <img src={movie.poster_path} />
+            <div className="movie-data">
+              <p className='movie-name' title={movie.title}>{movie.title}</p> 
+              <p className='movie-genres' title={genres}>{genres}</p>
+              <p className='movie-year'>{year}</p> 
+            </div>
           </div>
         );
       })

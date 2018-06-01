@@ -1,19 +1,53 @@
 .movies-container {
-    display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
     -webkit-align-items: center;
-    align-items: center;
     -webkit-justify-content: center;
+    align-items: center;
+    display: flex;
     justify-content: center;
 
 	.movie {
 		border: 1px solid black;
-		padding: 35px 10px;
+		cursor: pointer;
+		font-size: 11px;
+		height: 380px;
 		margin: 20px;
-		font-size: 16px;
 		position: relative;
 		width: 200px;
+
+		img {
+			width: 100%;
+		}
+
+		.movie-data {
+			padding: 10px;
+			position: relative;
+
+			p {
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.movie-name {
+				width: 80%;
+			}
+
+			.movie-genres {
+				font-size: 10px;
+			}
+
+			.movie-year {
+				border: 1px solid black;
+				bottom: 38px;
+				padding: 2px;
+				position: absolute;
+				right: 10px;
+			}
+		}
+
 	}
   }
 
