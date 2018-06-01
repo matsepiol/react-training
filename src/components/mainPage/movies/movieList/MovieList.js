@@ -1,29 +1,15 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 require('./style.scss');
 
 export default class MovieList extends React.Component {
 
-  componentDidMount() {
-    fetch('http://react-cdp-api.herokuapp.com/movies')
-    .then(res => res.json())
-    .then(
-      (result) => {
-        console.log(result);
-        this.setState({
-          isLoaded: true,
-          movies: result.data
-        });
-      },
-    )
-  }
-
   render() {
     let movie;
 
-    if (this.state && this.state.movies) {
-      console.log(this.state);
-      movie = this.state.movies.map( (movie, i) => {
+    if (this.props && this.props.movies) {
+      movie = this.props.movies.map( (movie, i) => {
         return (
           <div className='movie' key={i}> 
             <p className='movie-name'>Name: {movie.title}</p> 
@@ -38,4 +24,6 @@ export default class MovieList extends React.Component {
   }
 }
 
-
+MovieList.propTypes = {  
+  movies: PropTypes.array.isRequired
+};

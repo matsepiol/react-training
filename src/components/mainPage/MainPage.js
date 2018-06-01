@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';  
 
 import Movies from './movies/Movies';
 import Search from './search/Search';
@@ -9,37 +11,41 @@ import { getState } from 'redux';
 
 require('./style.scss');
 
-export default class MainPage extends React.Component {
+class MainPage extends React.Component {
+
   constructor() {
     super();
   }
 
   render() {
-    const stateProps = this.props.store.getState();
-
     return (
       <div className='main-page container'>
 
-        <div className='row'>
-            <Search />
-        </div>
+        <Search />
 
-        { true === false &&
-          <div className='row'>
-              <MovieDetails />
-          </div>
+        {true === false &&
+          <MovieDetails />
         }
 
-        <div className='row'>
-          <InfoBar />
-        </div>
+        <InfoBar />
 
-        <div className='row'>
-          <Movies movies = { stateProps }/>
-        </div>
+        {/* <ErrorBoundry> */}
+        <Movies movies={this.props.movies} />
+        {/* </ErrorBoundry> */}
       </div>
     );
   }
 }
 
+MainPage.propTypes = {  
+  movies: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    movies: state.movies
+  };
+}
+
+export default connect(mapStateToProps)(MainPage);  
 

@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 
 import Layout from './components/Layout';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import MoviesReducer from './reducers/Movies';
 
-let store = createStore(MoviesReducer);
+import { loadMovies } from './actions/moviesActions';
+
+
+let store = createStore(MoviesReducer, applyMiddleware(thunk));
+store.dispatch(loadMovies());
+
 
 ReactDOM.render(
     <Provider store = { store }>
