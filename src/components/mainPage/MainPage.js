@@ -22,7 +22,7 @@ export default class MainPage extends React.Component {
         
         <Switch>
           <Route exact path="/" component={Movies} />
-          <Route path="/film" component={MovieDetails} />
+          <Route path="/film/:id?" component={MovieDetails} />
         </Switch>
       </div>
     );
