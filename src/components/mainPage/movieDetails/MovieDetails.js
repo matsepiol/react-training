@@ -6,7 +6,6 @@ export default class MovieDetails extends React.Component {
   constructor() {
     super();
     this.state = { tasks: null };
-    alert(0);
   }
 
   render() {

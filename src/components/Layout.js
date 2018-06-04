@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Header from './header/Header';
 import MainPage from './mainPage/MainPage';
-import { getState } from 'redux';
 
 export default class Layout extends React.Component {
 
