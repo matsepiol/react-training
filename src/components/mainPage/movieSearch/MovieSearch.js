@@ -5,12 +5,11 @@ import React from "react";
 export default class MovieSearch extends React.Component {
   constructor() {
     super();
-    alert('search');
   }
 
   render() {
     return(
-      <h1>Search</h1>
+      <h1>Search: {this.props.match.params.query}</h1>
     )
   }
 }

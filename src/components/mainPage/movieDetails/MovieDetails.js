@@ -1,32 +1,37 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
 
 // require('./style.scss');
 
-export default class MovieDetails extends React.Component {
+class MovieDetails extends React.Component {
   constructor() {
     super();
     this.state = { tasks: null };
   }
 
   render() {
-    let movie;
-    if (this.props && this.props.movie) {
-      movie = this.props.movie;
-      return (
-        <div className='movie-details container'>
-          <span className='movie-title'>{movie.title}</span>
-          <span className='movie-rating'>{movie.rating}</span>
-          <span className='movie-genre'>{movie.genre}</span>
-          <span className='movie-year'>{movie.year}</span>
-          <span className='movie-duration'>{movie.duration}</span>
-          <span className='movie-description'>{movie.description}</span>
-        </div>
-      );
-    }
-
-    return(
-      <div className='movie-wrapper col-lg-12'>{movie}</div>
-    )
+    const movie = this.props.movies.filter((movie) => movie.id.toString() === this.props.match.params.id);
+    return (
+      <div className='movie-details container'>
+        <p className='movie-title'>Title: {movie[0].title}</p>
+        <p className='movie-year'>Release Date: {movie[0].release_date}</p>
+        <p className='movie-description'>Overview: {movie[0].overview}</p>
+        <img src={movie[0].poster_path} />
+      </div>
+    );
   }
 }
 
+MovieDetails.propTypes = {
+  movies: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    movies: state.movies
+  };
+}
+
+export default connect(mapStateToProps)(MovieDetails);  
