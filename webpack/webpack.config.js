@@ -1,11 +1,16 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-
-const htmlWebpackPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html"
-});
+const webpack = require('webpack');
+const path = require('path');
+const isDevMod = process.env.NODE_ENV === 'development';
 
 module.exports = {
+  mode: process.env.NODE_ENV,
+  output: {
+    filename: 'js/[name].js',
+    path: path.resolve('./public'),
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
@@ -20,9 +25,6 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: "style-loader"
-          },
-          {
             loader: "css-loader"
           },
           {
@@ -35,5 +37,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  plugins: [htmlWebpackPlugin]
+  plugins: [
+    isDevMod ? new webpack.NamedModulesPlugin() : new webpack.HashedModuleIdsPlugin(),
+  ],
 };

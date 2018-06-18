@@ -1,8 +1,9 @@
+import 'isomorphic-fetch';
+import 'babel-polyfill';
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import Layout from './components/Layout';
-
+import { hot } from 'react-hot-loader';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -14,11 +15,12 @@ import { loadMovies } from './actions/moviesActions';
 let store = createStore(MoviesReducer, applyMiddleware(thunk));
 store.dispatch(loadMovies());
 
-ReactDOM.render(
+const Index = () => {
     <BrowserRouter>
-        <Provider store = { store }>
-            <Layout store= { store } />
+        <Provider store={store}>
+            <Layout store={store} />
         </Provider>
-    </BrowserRouter>, 
-    document.getElementById('app')
-);
+    </BrowserRouter>
+}
+
+export default hot(module)(Index);
