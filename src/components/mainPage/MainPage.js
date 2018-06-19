@@ -2,13 +2,13 @@ import React from "react";
 
 import Search from './search/Search';
 import InfoBar from './infoBar/InfoBar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Movies from './movies/Movies';
 import MovieDetails from './movieDetails/MovieDetails';
 import MovieSearch from './movieSearch/MovieSearch';
 import ErrorPage from '../404/404';
 
-require('./style.scss');
+require('./style.css');
 
 export default class MainPage extends React.Component {
 
@@ -18,7 +18,6 @@ export default class MainPage extends React.Component {
 
   render() {
     return (
-      <Router>
         <div className='main-page container'>
           <Search />
           <InfoBar />
@@ -30,7 +29,6 @@ export default class MainPage extends React.Component {
             <Route component={ErrorPage} />
           </Switch>
         </div>
-      </Router>
     );
   }
 }

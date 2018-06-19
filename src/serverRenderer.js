@@ -1,6 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import Index from './index';
+import { StaticRouter } from "react-router-dom"
 
 function renderHTML(html) {
     return (
@@ -24,7 +25,19 @@ function renderHTML(html) {
 
 export default function serverRenderer() {
     return (req, res) => {
-        const htmlString = renderToString(<Index />);
+        const context = {};
+        const index = (
+            <Index location={req.url} context={context} Router={StaticRouter}/>
+        );
+        const htmlString = renderToString(index);
+
+        if (context.url) {
+            res.writeHead(302, {
+                Location: context.url,
+            });
+            res.end();
+            return;
+        }
 
         res.send(renderHTML(htmlString));
     };

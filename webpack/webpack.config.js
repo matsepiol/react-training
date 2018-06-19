@@ -21,17 +21,6 @@ module.exports = {
           options: { presets: ["es2015"] }
         }
       },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: "css-loader"
-          },
-          {
-            loader: "sass-loader"
-          }
-        ]
-      }
     ]
   },
   devServer: {

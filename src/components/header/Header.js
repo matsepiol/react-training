@@ -1,12 +1,12 @@
 import React from "react";
 
-require('./style.scss');
+import styles from './style.css';
 
 export default class Header extends React.Component {
   render() {
     return (
-      <header className='header'>
-        <span className='title'>netflix roulette</span>
+      <header className={styles.header}>
+        <span className={styles.title}>netflix roulette</span>
       </header>
     );
   }

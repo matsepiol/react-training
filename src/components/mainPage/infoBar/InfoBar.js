@@ -1,5 +1,5 @@
 import React from "react";
-require('./style.scss');
+require('./style.css');
 
 export default class InfoBar extends React.PureComponent {
   render() {

@@ -1,0 +1,8 @@
+header {
+	padding: 20px;
+	width: 80%;
+	margin: 0 auto;
+  }
+  header .title {
+	font-size: 30px;
+  }

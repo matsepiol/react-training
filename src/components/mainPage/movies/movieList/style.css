@@ -1,0 +1,44 @@
+.movies-container {
+	flex-direction: row;
+	flex-wrap: wrap;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+  }
+  .movies-container .movie {
+	border: 1px solid black;
+	cursor: pointer;
+	font-size: 11px;
+	height: 380px;
+	margin: 20px;
+	position: relative;
+	width: 200px;
+  }
+  .movies-container .movie img {
+	width: 100%;
+  }
+  .movies-container .movie div {
+	padding: 10px;
+	position: relative;
+  }
+  .movies-container .movie div p {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  }
+  .movies-container .movie div .movie-name {
+	width: 80%;
+  }
+  .movies-container .movie div .movie-genres {
+	font-size: 10px;
+  }
+  .movies-container .movie div .movie-year {
+	border: 1px solid black;
+	bottom: 38px;
+	padding: 2px;
+	position: absolute;
+	right: 10px;
+  }
