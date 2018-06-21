@@ -4,10 +4,10 @@
   "description": "React mentoring program",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    // "start": "webpack-dev-server --mode development --open",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack",
     "test": "./node_modules/.bin/jest",
-    "ssr": "cross-env NODE_ENV=development  node ./server"
+    "start": "cross-env NODE_ENV=development  node ./server"
   },
   "author": "Mateusz Sepioł",
   "license": "ISC",
