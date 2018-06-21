@@ -17,15 +17,16 @@ export default class MainPage extends React.Component {
   }
 
   render() {
+    const store = this.props.store;
     return (
         <div className='main-page container'>
-          <Search />
-          <InfoBar />
+          <Search store = { store } />
+          <InfoBar  store = { store } />
 
           <Switch>
-            <Route exact path="/" component={Movies} />
+            <Route exact path="/" component={Movies} store = { store } />
             <Route path="/movie/:id?" component={MovieDetails} />
-            <Route path="/search/:query?" component={ MovieSearch } />
+            {/* <Route path="/search/:query?" component={ MovieSearch } /> */}
             <Route component={ErrorPage} />
           </Switch>
         </div>

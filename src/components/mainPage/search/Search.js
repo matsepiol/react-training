@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import { searchByNameAction } from '../../../actions/moviesActions';
 
 require('./style.css');
 
@@ -8,12 +9,13 @@ export default class Search extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { searchQuery: '' };
+
+    this.state = { searchQuery: '', store: props.store };
     this.setSearchQuery = this.setSearchQuery.bind(this);
   }
 
   setSearchQuery(event) {
-    this.setState({searchQuery: event.target.value});
+    this.setState({searchQuery: event.target.value, store: this.props.store });
   }
 
   render() {
@@ -23,7 +25,7 @@ export default class Search extends React.Component {
         <SearchInputComponent setSearchQuery={this.setSearchQuery} />
         <p>Search by:</p>
         <SearchFiltersComponent />
-        <SearchSubmitButton searchQuery={this.state.searchQuery} />
+        <SearchSubmitButton searchQuery={this.state.searchQuery} store={this.state.store}/>
 
       </div>)
   }
@@ -48,12 +50,15 @@ function SearchFiltersComponent() {
 
 function SearchSubmitButton(props) {
   return (
-    <Link to={'/search/' + props.searchQuery }>
-      <button type="button" className="btn btn-danger btn-sm search-button">
+      <button type="button" onClick={(e) => searchByName(e, props)} className="btn btn-danger btn-sm search-button">
         Search
       </button>
-    </Link>
   )
+}
+
+function searchByName(e, props) {
+  console.log(props);
+  props.store.dispatch(searchByNameAction(props.searchQuery));
 }
 
 SearchSubmitButton.propTypes = {  

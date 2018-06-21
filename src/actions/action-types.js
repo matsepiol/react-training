@@ -1,1 +1,4 @@
 export const GET_MOVIES_SUCCESS = "GET_MOVIES_SUCCESS";
+export const SORT_BY_NAME = "SORT_BY_NAME";
+export const SORT_BY_GENRE = "SORT_BY_GENRE";
+export const SEARCH_BY_NAME = "SEARCH_BY_NAME";

@@ -7,12 +7,19 @@ import ErrorBoundry from '../errorBoundry/ErrorBoundry';
 require('./style.scss');
 
 class Movies extends React.PureComponent {
+
+  constructor() {
+    super();
+  }
+
+  
   render() {
+    //const state = this.props.state.getState();
    
     return (
       <div>
         <ErrorBoundry>
-          <MovieList movies={this.props.movies} />
+          <MovieList movies={this.props.state.movies} />
         </ErrorBoundry>
         </div>
     );
@@ -25,6 +32,7 @@ Movies.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
+    state: state,
     movies: state.movies
   };
 }

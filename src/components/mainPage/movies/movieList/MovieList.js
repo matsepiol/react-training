@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-
 import styles from './style.css';
 
 export default class MovieList extends React.Component {
 
   render() {
     let movie;
+   // const state = this.props.store.getState();
 
     if (this.props && this.props.movies) {
       movie = this.props.movies.map( (movie, i) => {
